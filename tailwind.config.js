@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -12,7 +13,12 @@ module.exports = {
       fontFamily: {
         'menu': ['Raleway','sans-serif'],
       },
+      colors:{
+        primary:'#257DFF'
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    // require('@tailwindcss/forms'),
+  ],
 }
