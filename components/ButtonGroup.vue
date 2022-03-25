@@ -4,8 +4,8 @@
       v-for="item in titles"
       :key="item.title"
       :style="`width: ${(100/$props.titles.length)-1}%`"
-      class="text-center py-[8px] px-[37px] text-sm h-full box-border rounded"
-      :class="{'bg-primary text-white shadow' : item.title === activeBtnTitle , 'text-gray-900 bg-white':item.title!==activeBtnTitle}"
+      class="text-center py-[8px] px-[37px] text-sm h-full box-border rounded mx-[4px]"
+      :class="{'bg-primary ring-offset-1 ring-2 ring-primary text-white shadow' : item.title === activeBtnTitle , 'text-gray-900 bg-white':item.title!==activeBtnTitle}"
       @click.prevent="setItem(item)"
     >
       {{ item.title }}

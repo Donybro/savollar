@@ -7,11 +7,14 @@
       </div>
       <span class="error_message">{{ errors[0] }}</span>
     </ValidationProvider>
-    <div class="grid grid-cols-12">
+    <div class="grid grid-cols-12 gap-3">
       <ValidationProvider class="col-span-9" rules="required" v-slot="{ errors }">
-        <div class="form_wrapper">
-          <label class="form_label" for="questionName">Savol bo‘limi</label>
-          <SelectBox v-model="selectBoxValue" placeholder="Savol bo‘limini tanlang"  :options="optionsList" track-by="id" show-by="name"/>
+        <div class="form_wrapper" >
+          <label class="form_label" for="selectBoxValue">Savol bo‘limi</label>
+          <select class="base_input bg-white" v-model="selectBoxValue" name="selectBoxValue" id="selectBoxValue">
+            <option class="text-[#181818]" selected disabled value="">Savol bo‘limini tanlang</option>
+            <option v-for="item in optionsList" :key="item" :value="item.id">{{ item.name }}</option>
+          </select>
         </div>
       </ValidationProvider>
       <ValidationProvider class="col-span-3" rules="required" v-slot="{ errors }">
@@ -28,10 +31,9 @@
 import {ValidationProvider} from 'vee-validate'
 import SelectBox from "./SelectBox";
 import ButtonGroup from "./ButtonGroup";
-
 export default {
   name: "AskFormFields",
-  components:{ButtonGroup, SelectBox, ValidationProvider},
+  components:{ButtonGroup, SelectBox, ValidationProvider,},
   data() {
     return {
       questionName: '',
