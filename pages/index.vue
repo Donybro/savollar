@@ -19,10 +19,15 @@ import Tab from "../components/Tab";
 import QuestionItem from "../components/QuestionItem";
 import MainSearch from "../components/MainSearch";
 import SectionsList from "../components/SectionsList";
+import axios from '../helpers/http'
 export default {
   name: 'IndexPage',
   layout:'MainLayout',
   components: {SectionsList, MainSearch, QuestionItem, Tab, Header},
+  async mounted() {
+    const data = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
+    console.log(data)
+  },
   data() {
     return {
       selectedTab: ''
