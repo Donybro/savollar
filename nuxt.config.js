@@ -25,7 +25,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/vee-validate","~/plugins/axios"],
+  plugins: ["~/plugins/vee-validate","~/plugins/axios","~/plugins/vue-instantsearch", "~/plugins/clickaway"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -37,8 +37,8 @@ export default {
   axios: {
     baseURL: urlServer,
     // baseURL: 'https://aokaevents.tcrp.uz/api',
-    // credentials: true,
-    // withCredentials: true,
+    credentials: true,
+    withCredentials: true,
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios'],

@@ -3,7 +3,7 @@
     <div class="cursor-pointer text-[#8F8F8F] py-[12px]" :class="{'active':item === selectedItem}" v-for="item in tabItems" :key="item" @click="setSelectedItem(item)">
       {{item}}
     </div>
-    <div class="absolute w-full h-[3px] bg-[#ccc] bottom-0 left-0"></div>
+    <div class="absolute w-full h-[3px] bg-[#ccc] bottom-0 left-0 z-10"></div>
   </div>
 </template>
 
@@ -32,6 +32,6 @@ export default {
 <style scoped>
 
 .active{
-  @apply text-primary border-b-[3px] border-primary z-10
+  @apply text-primary border-b-[3px] border-primary z-[11]
 }
 </style>

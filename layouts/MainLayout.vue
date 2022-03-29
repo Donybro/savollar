@@ -1,7 +1,7 @@
 <template>
   <section>
     <Header />
-    <section class="section_wrapper">
+    <section class="section_wrapper pt-[64px]">
       <router-view></router-view>
     </section>
   </section>

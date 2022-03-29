@@ -1,7 +1,7 @@
 <template>
   <div class="w-full shadow-[0_5px_30px_rgba(101,101,101,0.15)]">
     <div class="section_wrapper flex items-center justify-between py-[24px]">
-      <Logo/>
+      <Logo @click="goToMainPage" class="cursor-pointer"/>
       <nav class="">
         <ul class="font-menu flex gap-[32px]">
           <li class="list">
@@ -40,6 +40,12 @@ export default {
     RULES:'rules',
     INFO:'info',
     ABOUT:'about',
+  },
+  methods:{
+    goToMainPage(){
+      console.log('sds')
+      this.$router.push('/')
+    }
   },
   computed:{
     currentRoute:function (){

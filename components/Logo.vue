@@ -1,5 +1,5 @@
 <template>
-  <img :src="$options.logoPath" class="w-[267px]" alt="main logo">
+  <img @click="$emit('click')" :src="$options.logoPath" class="w-[267px]" alt="main logo">
 </template>
 
 <script>

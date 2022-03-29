@@ -31,7 +31,7 @@
             <option class="text-[#181818]" selected disabled value="">
               Savol bo‘limini tanlang
             </option>
-            <option v-for="item in optionsList" :key="item" :value="item.id">
+            <option v-for="item in optionsList" :key="item.id" :value="item.id">
               {{ item.name }}
             </option>
           </select>
@@ -73,6 +73,7 @@
 </template>
 
 <script>
+
 import { ValidationProvider } from "vee-validate";
 import SelectBox from "./SelectBox";
 import ButtonGroup from "./ButtonGroup";
