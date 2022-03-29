@@ -1,6 +1,6 @@
 <template>
   <div class="flex gap-[10px] items-center rounded-[4px] px-[16px] py-[11px]" :class="stylesByType">
-    <img v-if="this.alertType === this.$options.alertTypes.DANGER" src="../assets/icons/Search.svg" class="float-left w-[24px] h-[24px]" alt="">
+    <img v-if="this.alertType === this.$options.alertTypes.DANGER" src="../assets/icons/dangerous.svg" class="float-left w-[24px] h-[24px]" alt="">
     <slot>
 
     </slot>
