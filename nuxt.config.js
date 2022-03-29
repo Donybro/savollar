@@ -37,8 +37,8 @@ export default {
   axios: {
     baseURL: urlServer,
     // baseURL: 'https://aokaevents.tcrp.uz/api',
-    credentials: true,
-    withCredentials: true,
+    // credentials: true,
+    // withCredentials: true,
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios'],
