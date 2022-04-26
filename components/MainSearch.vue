@@ -1,13 +1,24 @@
 <template>
   <div class="">
     <div class="flex gap-[9px]">
-      <ais-instant-search :search-client="searchClient" index-name="steam-video-games" v-on-clickaway="closeHintsWindow">
+      <ais-instant-search :search-client="searchClient" index-name="questions" v-on-clickaway="closeHintsWindow">
         <ais-search-box @focus="focusHandler" placeholder="Savolni izlash" />
         <ais-hits v-if="hintsIsOpened">
-          <div slot="item" slot-scope="{ item }">
-            <h2>{{ item.name }}</h2>
-          </div>
+            <template slot="item" slot-scope="{ item }">
+              <div>
+                <div class="hit-name">
+                  <ais-highlight :hit="item" attribute="title" />
+                </div>
+                <div class="hit-description">
+                  <ais-snippet :hit="item" attribute="body" />
+                </div>
+              </div>
+            </template>
         </ais-hits>
+        <ais-configure
+          :attributesToSnippet="['description:50']"
+          snippetEllipsisText="…"
+        />
       </ais-instant-search>
 <!--      <div @click="onSearchClick" class="border bg-white border-[#8F8F8F] rounded-[4px] flex items-center py-[16px] px-[12px] w-full">-->
 <!--        <img src="../assets/icons/Search.svg" class="mr-[20px] w-[24px] h-[24px]" alt="">-->
@@ -34,8 +45,8 @@ export default {
   data() {
     return {
       searchClient: instantMeiliSearch(
-        "https://integration-demos.meilisearch.com",
-        "q7QHwGiX841a509c8b05ef29e55f2d94c02c00635f729ccf097a734cbdf7961530f47c47"
+        "https://search-savollar.nuraliev.dev/",
+        "zikr2244"
       ),
       hintsIsOpened:false
     }

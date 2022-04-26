@@ -1,6 +1,7 @@
 <template>
  <section class="">
-   <MainSearch/>
+<!--   <MainSearch/>-->
+   <Test/>
    <section class="px-[8px]">
      <section class="my-5 gap-[10px] grid grid-cols-12">
        <section class="col-span-9">
@@ -18,12 +19,13 @@ import Header from "../components/Header";
 import Tab from "../components/Tab";
 import QuestionItem from "../components/QuestionItem";
 import MainSearch from "../components/MainSearch";
+import Test from "../components/aaaa";
 import SectionsList from "../components/SectionsList";
 import axios from '../helpers/http'
 export default {
   name: 'IndexPage',
   layout:'MainLayout',
-  components: {SectionsList, MainSearch, QuestionItem, Tab, Header},
+  components: {SectionsList, MainSearch, QuestionItem, Tab, Header,Test},
   async mounted() {
     const data = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
     console.log(data)
